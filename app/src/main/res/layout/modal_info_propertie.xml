@@ -100,7 +100,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/info"
                 android:text="info"/>
-
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
