@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,7 +70,7 @@ public class KnownPropertiesCustomAdapter extends RecyclerView.Adapter<KnownProp
         holder.check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(view.getContext(), android.R.style.Theme_DeviceDefault_Light));
                 builder.setTitle(propertie.getName());
                 View viewInflated = LayoutInflater.from(mContext).inflate(R.layout.modal_info_propertie, (ViewGroup) view.getRootView(), false);
 
@@ -104,6 +105,8 @@ public class KnownPropertiesCustomAdapter extends RecyclerView.Adapter<KnownProp
                 });
 
                builder.show();
+
+
             }
         });
 
