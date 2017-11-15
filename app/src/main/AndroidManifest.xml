@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegisterClientActivity" />
+        <activity android:name=".RegisterRealtorActivity" />
+        <activity android:name=".ListPurchasePropertiesActivity"></activity>
     </application>
 
 </manifest>

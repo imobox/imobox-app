@@ -4,4 +4,5 @@
     <string name="client">Cliente</string>
     <string name="realtor">Realtor</string>
     <string name="owner">owner</string>
+    <string name="add">Adicionar/Prosseguir</string>
 </resources>
