@@ -3,6 +3,7 @@ package br.imobox.com.imobox;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +37,7 @@ public class RegisterClientActivity extends AppCompatActivity {
     private String type;
     private String lookingFor;
     private String moment;
-
+    private String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,11 +64,41 @@ public class RegisterClientActivity extends AppCompatActivity {
         // Spinner
         sppiner_what_are_you_looking_for = findViewById(R.id.sppiner_what_are_you_looking_for);
         sppiner_why_do_you_want_to_rent_buy_moment_of_life = findViewById(R.id.sppiner_why_do_you_want_to_rent_buy_moment_of_life);
-        
+
         // ProgressBar
         progressbar = findViewById(R.id.progressbar);
 
         db = new DatabaseHandler(this);
+
+        Log.e("db.getClientsCount()", ""+ db.getClientsCount());
+
+        if(db.getClientsCount() > 0) {
+            Client client = db.getClient(1);
+
+            id = client.getId();
+            et_email.setText(client.getEmail());
+            et_perfil.setText(client.getEmail());
+            et_about.setText(client.getEmail());
+            et_birthday.setText(client.getEmail());
+            et_school_records.setText(client.getEmail());
+            et_work_records.setText(client.getEmail());
+            et_location.setText(client.getEmail());
+            sppiner_what_are_you_looking_for.setSelection(Integer.parseInt(client.getLookingFor()));
+            sppiner_why_do_you_want_to_rent_buy_moment_of_life.setSelection(Integer.parseInt(client.getMoment()));
+
+
+            if(client.getType().equals("R")) {
+                rent.setChecked(true);
+            } else {
+                purchase.setChecked(true);
+            }
+
+            if(client.getSex().equals("M")) {
+                male.setChecked(true);
+            } else {
+                female.setChecked(true);
+            }
+        }
 
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,8 +110,9 @@ public class RegisterClientActivity extends AppCompatActivity {
                 schoolRecords = et_school_records.getText().toString();
                 workRecords = et_work_records.getText().toString();
                 location = et_location.getText().toString();
-                lookingFor = sppiner_what_are_you_looking_for.getSelectedItem().toString();
-                moment = sppiner_why_do_you_want_to_rent_buy_moment_of_life.getSelectedItem().toString();
+                lookingFor = String.valueOf(sppiner_what_are_you_looking_for.getSelectedItemId());
+                moment = String.valueOf(sppiner_why_do_you_want_to_rent_buy_moment_of_life.getSelectedItemId());
+
                 if(rent.isChecked()) {
                     type = "R";
                 } else {
@@ -92,8 +124,13 @@ public class RegisterClientActivity extends AppCompatActivity {
                     sex = "F";
                 }
 
-                db.addUser(new Client(email, perfil, about, birthday, schoolRecords, workRecords, location, sex, type, lookingFor, moment));
-                onResume();
+                if(db.getClientsCount() > 0) {
+                    db.updateClient(new Client(id, email, perfil, about, birthday, schoolRecords, workRecords, location, sex, type, lookingFor, moment));
+                    onResume();
+                } else {
+                    db.addClient(new Client(email, perfil, about, birthday, schoolRecords, workRecords, location, sex, type, lookingFor, moment));
+                    onResume();
+                }
 
                 Intent intent = new Intent(RegisterClientActivity.this, ListPurchasePropertiesActivity.class);
                 startActivity(intent);
