@@ -61,7 +61,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             intent.setAction(Long.toString(System.currentTimeMillis()));
 
             NotificationCompat.Builder mBuilder =   new NotificationCompat.Builder(this)
-                    .setSmallIcon(R.drawable.ic_launcher_background) // notification icon
+                    .setSmallIcon(R.mipmap.ic_launcher) // notification icon
                     .setContentTitle("Match com um novo cliente!") // title for notification
                     .setContentText("Está interessado?") // message for notification
                     .addAction(R.drawable.ic_launcher_background, "sim", pi)
@@ -79,7 +79,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             intent.setAction(Long.toString(System.currentTimeMillis()));
 
             NotificationCompat.Builder mBuilder =   new NotificationCompat.Builder(this)
-                    .setSmallIcon(R.drawable.ic_launcher_background) // notification icon
+                    .setSmallIcon(R.mipmap.ic_launcher) // notification icon
                     .setContentTitle("Match com um novo cliente!") // title for notification
                     .setContentText("Está interessado?") // message for notification
                     .addAction(R.drawable.ic_launcher_background, "sim", pi)
