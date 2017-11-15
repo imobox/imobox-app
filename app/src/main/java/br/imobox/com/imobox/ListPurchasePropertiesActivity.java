@@ -29,6 +29,9 @@ public class ListPurchasePropertiesActivity extends AppCompatActivity {
         propertiesList = new ArrayList<>();
 
         propertiesList.add(new Propertie("x", "y"));
+        propertiesList.add(new Propertie("x", "y"));
+        propertiesList.add(new Propertie("x", "y"));
+        propertiesList.add(new Propertie("x", "y"));
 
         propertiesCustomAdapter = new PropertiesCustomAdapter(getBaseContext(), propertiesList);
 

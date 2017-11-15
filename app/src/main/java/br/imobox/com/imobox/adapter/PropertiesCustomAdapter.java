@@ -66,7 +66,7 @@ public class PropertiesCustomAdapter extends RecyclerView.Adapter<PropertiesCust
             }
         });
 
-        new DownloadImageTask(holder.image).execute("http://f.i.uol.com.br/folha/esporte/images/16225746.jpeg");
+        new DownloadImageTask(holder.image).execute("http://www.imovelweb.com.br/noticias/wp-content/uploads/2017/10/corretagem.jpg");
     }
 
     @Override
