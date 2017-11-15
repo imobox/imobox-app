@@ -22,7 +22,9 @@
         </activity>
         <activity android:name=".RegisterClientActivity" />
         <activity android:name=".RegisterRealtorActivity" />
-        <activity android:name=".ListPurchasePropertiesActivity"></activity>
+        <activity android:name=".ListPurchasePropertiesActivity" />
+        <activity android:name=".InfoPropertieActivity" />
+        <activity android:name=".ListKnownPropertiesActivity"></activity>
     </application>
 
 </manifest>
