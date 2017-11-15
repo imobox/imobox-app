@@ -9,16 +9,16 @@ public class Propertie {
     private int id;
     private String name;
     private String image;
-    private double value;
+    private String value;
     private boolean check;
 
-    public Propertie(int id, String name, String image, double value) {
+    public Propertie(int id, String name, String image, String value) {
         this.id = id;
         this.name = name;
         this.image = image;
     }
 
-    public Propertie(int id, String name, String image, double value, boolean check) {
+    public Propertie(int id, String name, String image, String value, boolean check) {
         this.id = id;
         this.name = name;
         this.image = image;
@@ -26,11 +26,11 @@ public class Propertie {
         this.value = value;
     }
 
-    public double getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(double value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

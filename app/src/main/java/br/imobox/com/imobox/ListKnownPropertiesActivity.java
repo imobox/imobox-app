@@ -24,15 +24,15 @@ public class ListKnownPropertiesActivity extends AppCompatActivity {
 
         listProperties = (RecyclerView) findViewById(R.id.list_properties);
 
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
         listProperties.setLayoutManager(mLayoutManager);
 
         propertiesList = new ArrayList<>();
 
-        propertiesList.add(new Propertie(1, "1", "y", 00.00, false));
-        propertiesList.add(new Propertie(2, "2", "y", 00.00, true));
-        propertiesList.add(new Propertie(3 ,"3", "y", 00.00, true));
-        propertiesList.add(new Propertie(4, "4", "y", 00.00, true));
+        propertiesList.add(new Propertie(0, "1", "y", "", false));
+        propertiesList.add(new Propertie(1, "2", "y", "", true));
+        propertiesList.add(new Propertie(2 ,"3", "y", "", true));
+        propertiesList.add(new Propertie(3, "4", "y", "", true));
 
         knownPropertiesCustomAdapter = new KnownPropertiesCustomAdapter(getBaseContext(), propertiesList);
 
