@@ -18,6 +18,8 @@ import com.facebook.login.widget.LoginButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import br.imobox.com.imobox.model.Client;
+
 import static java.nio.file.Paths.get;
 
 public class LoginActivity extends AppCompatActivity {
@@ -43,7 +45,15 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onCompleted(JSONObject object, GraphResponse response) {
                         try {
-                            Log.d(TAG, "onCompleted: "+object.get("email").toString());
+                            Client client = new Client();
+                            client.setBirthday(object.get("birthday").toString());
+                            client.setLocation(((JSONObject) object.get("hometown")).get("name").toString());
+                            client.setEmail(object.get("email").toString());
+                            client.setSex(object.get("gender").toString());
+                            client.setPerfil(object.get("name").toString());
+                            Intent intent = new Intent(LoginActivity.this, RegisterClientActivity.class);
+                            intent.putExtra("client", client);
+                            startActivity(intent);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

@@ -43,6 +43,8 @@ public class RegisterClientActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_client);
 
+        Client fbClient = getIntent().getParcelableExtra("client");
+
         btn_add = findViewById(R.id.btn_add);
 
         // EditText
@@ -72,17 +74,23 @@ public class RegisterClientActivity extends AppCompatActivity {
 
         Log.e("db.getClientsCount()", ""+ db.getClientsCount());
 
+        et_email.setText(fbClient.getEmail());
+        et_birthday.setText(fbClient.getBirthday());
+        et_location.setText(fbClient.getLocation());
+        et_school_records.setText("Faculdade Impacta Tecnologia");
+        et_work_records.setText("imobox");
+        et_perfil.setText(fbClient.getPerfil());//name
+
+        if(fbClient.getSex().startsWith("m")) {
+            male.setChecked(true);
+        } else {
+            female.setChecked(true);
+        }
+
         if(db.getClientsCount() > 0) {
             Client client = db.getClient(1);
 
             id = client.getId();
-            et_email.setText(client.getEmail());
-            et_perfil.setText(client.getEmail());
-            et_about.setText(client.getEmail());
-            et_birthday.setText(client.getEmail());
-            et_school_records.setText(client.getEmail());
-            et_work_records.setText(client.getEmail());
-            et_location.setText(client.getEmail());
             sppiner_what_are_you_looking_for.setSelection(Integer.parseInt(client.getLookingFor()));
             sppiner_why_do_you_want_to_rent_buy_moment_of_life.setSelection(Integer.parseInt(client.getMoment()));
 
@@ -91,12 +99,6 @@ public class RegisterClientActivity extends AppCompatActivity {
                 rent.setChecked(true);
             } else {
                 purchase.setChecked(true);
-            }
-
-            if(client.getSex().equals("M")) {
-                male.setChecked(true);
-            } else {
-                female.setChecked(true);
             }
         }
 
