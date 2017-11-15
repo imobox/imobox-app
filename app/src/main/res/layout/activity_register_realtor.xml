@@ -7,31 +7,45 @@
     tools:context="br.imobox.com.imobox.RegisterRealtorActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="16dp"
         android:orientation="vertical"
-        android:gravity="center"
-        android:foregroundGravity="center"
-        >
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp">
 
-        <EditText
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="creci"
-            android:id="@+id/creci"/>
+            android:hint="CRECI">
+
+            <EditText
+                android:id="@+id/creci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Você possui carro?"/>
+            android:layout_marginTop="16dp"
+            android:text="Qual a sua faixa etária de preferência?" />
 
-        
+
         <Spinner
             android:id="@+id/preferencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:entries="@array/array_preferencia"
             android:prompt="@string/preferencia" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Disponibilidade" />
 
         <Spinner
             android:id="@+id/disponibilidade"
@@ -40,6 +54,12 @@
             android:entries="@array/array_disponibilidade"
             android:prompt="@string/disponibilidade" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Região" />
+
         <Spinner
             android:id="@+id/regioes"
             android:layout_width="match_parent"
@@ -47,20 +67,35 @@
             android:entries="@array/array_regioes"
             android:prompt="@string/regioes" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Tipo de Imóvel" />
+
         <Spinner
             android:id="@+id/tipo_imovel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/array_tipo_imovel"
             android:prompt="@string/tipo_imovel" />
-
-        <Button
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/add"
-            android:id="@+id/btn_add" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import br.imobox.com.imobox.handler.DatabaseHandler;
 import br.imobox.com.imobox.handler.DatabaseRealtorHandler;
 import br.imobox.com.imobox.model.Client;
@@ -61,7 +63,7 @@ public class RegisterRealtorActivity extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                FirebaseMessaging.getInstance().subscribeToTopic("corretor");
                 tx_creci = creci.getText().toString();
                 tx_tipo_imovel = String.valueOf(tipo_imovel.getSelectedItemId());
                 tx_disponibilidade = String.valueOf(disponibilidade.getSelectedItemId());

@@ -60,11 +60,7 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name=".LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".SendNotificationActivity">
             <!--<intent-filter>-->
@@ -74,7 +70,13 @@
             <!--</intent-filter>-->
         </activity>
         <activity android:name=".RegisterClientActivity" />
-        <activity android:name=".RegisterRealtorActivity" />
+        <activity android:name=".RegisterRealtorActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ListPurchasePropertiesActivity" />
         <activity android:name=".InfoPropertieActivity" />
         <activity android:name=".ListKnownPropertiesActivity" />
