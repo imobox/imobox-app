@@ -10,7 +10,8 @@
     <string name="title_propertie"></string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
     <string name="why_do_you_want_to_rent_buy_moment_of_life">Why do you want to rent / buy? - Moment of life</string>
     <string-array name="array_why_do_you_want_to_rent_buy_moment_of_life">
         <item>Vou me casar</item>
@@ -45,4 +46,47 @@
         <item>Galpão</item>
     </string-array>
 
+    <string name="preferencia">Prefere trabalhar com qual faixa etária?</string>
+    <string-array name="array_preferencia">
+        <item>De 18 até 28 anos</item>
+        <item>De 29 até 39 anos</item>
+        <item>De 40 até 49 anos</item>
+        <item>De 50 até 59 anos</item>
+        <item>Acima de 60 anos</item>
+    </string-array>
+
+    <string name="disponibilidade">Disponibilidade</string>
+    <string-array name="array_disponibilidade">
+        <item>Manhã</item>
+        <item>Tarde</item>
+        <item>Noite</item>
+    </string-array>
+
+    <string name="regioes">Quais regiões você gostaria de atender?</string>
+    <string-array name="array_regioes">
+        <item>Zona Leste</item>
+        <item>Zona Norte</item>
+        <item>Centro</item>
+        <item>Zona Oeste</item>
+        <item>Zona Sul</item>
+    </string-array>
+
+    <string name="tipo_imovel">Tipos de imóveis que prefere trabalhar</string>
+    <string-array name="array_tipo_imovel">
+        <item>Residencial</item>
+        <item>Apartamento</item>
+        <item>Casa</item>
+        <item>Chácara</item>
+        <item>Casa de condomínio</item>
+        <item>Flat</item>
+        <item>Sobrado</item>
+        <item>Cobertura</item>
+        <item>Kitnet</item>
+        <item>Comercial</item>
+        <item>Consultório</item>
+        <item>Edifício residencial</item>
+        <item>Sala comercial</item>
+        <item>Loja</item>
+        <item>Galpão</item>
+    </string-array>
 </resources>
