@@ -1,9 +1,11 @@
 package br.imobox.com.imobox.adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -33,6 +35,12 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         Message message = messages.get(position);
+        if (!message.isMe()) {
+            ViewGroup.LayoutParams layoutParams = viewHolder.message.getLayoutParams(); // Step 1.
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) layoutParams; // Step 2.
+            params.gravity = Gravity.LEFT;
+            viewHolder.message.setLayoutParams(params);
+        }
         viewHolder.message.setText(message.getMessage());
     }
 

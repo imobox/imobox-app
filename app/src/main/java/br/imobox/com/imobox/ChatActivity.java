@@ -1,5 +1,6 @@
 package br.imobox.com.imobox;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -39,6 +40,13 @@ public class ChatActivity extends AppCompatActivity {
             messageList.add(new Message(true, editTextMessage.getText().toString()));
             chatAdapter.replaceData(messageList);
             editTextMessage.setText("");
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    messageList.add(new Message(false, "Sim!"));
+                    chatAdapter.replaceData(messageList);
+                }
+            }, 2000);
         }
     }
 }
