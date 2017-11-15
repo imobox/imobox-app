@@ -26,8 +26,8 @@ public class IntroActivity extends AppIntro {
         }
 
         addSlide(AppIntroFragment.newInstance(getString(R.string.intro_2_title), getString(R.string.intro_2_desc), R.drawable.realtor, getResources().getColor(R.color.colorPrimary)));
-        addSlide(AppIntroFragment.newInstance(getString(R.string.intro_1_title), getString(R.string.intro_1_desc), R.drawable.client, getResources().getColor(R.color.colorPrimary)));
-        addSlide(AppIntroFragment.newInstance(getString(R.string.intro_3_title), getString(R.string.intro_3_desc), R.drawable.owner, getResources().getColor(R.color.colorPrimary)));
+        addSlide(AppIntroFragment.newInstance(getString(R.string.intro_3_title), getString(R.string.intro_3_desc), R.drawable.client, getResources().getColor(R.color.colorPrimary)));
+        addSlide(AppIntroFragment.newInstance(getString(R.string.intro_1_title), getString(R.string.intro_1_desc), R.drawable.owner, getResources().getColor(R.color.colorPrimary)));
 
         showSkipButton(false);
     }
