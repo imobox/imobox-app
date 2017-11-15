@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">imobox</string>
-
+    <string name="facebook_app_id">129310704392597</string>
+    <string name="fb_login_protocol_scheme">fb129310704392597</string>
     <string name="client">Cliente</string>
     <string name="realtor">Realtor</string>
     <string name="owner">owner</string>

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -22,7 +23,7 @@ public class RegisterClientActivity extends AppCompatActivity {
     EditText et_email,et_perfil,et_about,et_birthday,et_school_records,et_work_records,et_location;
     RadioButton male,female,rent,purchase;
     Spinner sppiner_what_are_you_looking_for, sppiner_why_do_you_want_to_rent_buy_moment_of_life;
-    ProgressBar progressbar;
+    SeekBar progressbar;
 
     DatabaseHandler db;
 
@@ -43,12 +44,14 @@ public class RegisterClientActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_client);
 
+        Client fbClient = getIntent().getParcelableExtra("client");
+
         btn_add = findViewById(R.id.btn_add);
 
         // EditText
         et_email = findViewById(R.id.et_email);
         et_perfil = findViewById(R.id.et_perfil);
-        et_about = findViewById(R.id.et_about);
+//        et_about = findViewById(R.id.et_about);
         et_birthday = findViewById(R.id.et_birthday);
         et_school_records = findViewById(R.id.et_school_records);
         et_work_records = findViewById(R.id.et_work_records);
@@ -66,23 +69,29 @@ public class RegisterClientActivity extends AppCompatActivity {
         sppiner_why_do_you_want_to_rent_buy_moment_of_life = findViewById(R.id.sppiner_why_do_you_want_to_rent_buy_moment_of_life);
 
         // ProgressBar
-        progressbar = findViewById(R.id.progressbar);
+//        progressbar = findViewById(R.id.progressbar);
 
         db = new DatabaseHandler(this);
 
         Log.e("db.getClientsCount()", ""+ db.getClientsCount());
 
+        et_email.setText(fbClient.getEmail());
+        et_birthday.setText(fbClient.getBirthday());
+        et_location.setText(fbClient.getLocation());
+        et_school_records.setText("Faculdade Impacta Tecnologia");
+        et_work_records.setText("imobox");
+        et_perfil.setText(fbClient.getPerfil());//name
+
+        if(fbClient.getSex().startsWith("m")) {
+            male.setChecked(true);
+        } else {
+            female.setChecked(true);
+        }
+
         if(db.getClientsCount() > 0) {
             Client client = db.getClient(1);
 
             id = client.getId();
-            et_email.setText(client.getEmail());
-            et_perfil.setText(client.getEmail());
-            et_about.setText(client.getEmail());
-            et_birthday.setText(client.getEmail());
-            et_school_records.setText(client.getEmail());
-            et_work_records.setText(client.getEmail());
-            et_location.setText(client.getEmail());
             sppiner_what_are_you_looking_for.setSelection(Integer.parseInt(client.getLookingFor()));
             sppiner_why_do_you_want_to_rent_buy_moment_of_life.setSelection(Integer.parseInt(client.getMoment()));
 
@@ -92,12 +101,6 @@ public class RegisterClientActivity extends AppCompatActivity {
             } else {
                 purchase.setChecked(true);
             }
-
-            if(client.getSex().equals("M")) {
-                male.setChecked(true);
-            } else {
-                female.setChecked(true);
-            }
         }
 
         btn_add.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +108,7 @@ public class RegisterClientActivity extends AppCompatActivity {
             public void onClick(View view) {
                 email = et_email.getText().toString();
                 perfil = et_perfil.getText().toString();
-                about = et_about.getText().toString();
+//                about = et_about.getText().toString();
                 birthday = et_birthday.getText().toString();
                 schoolRecords = et_school_records.getText().toString();
                 workRecords = et_work_records.getText().toString();
