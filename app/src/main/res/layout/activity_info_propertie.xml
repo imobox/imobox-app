@@ -1,52 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
     tools:context="br.imobox.com.imobox.InfoPropertieActivity">
-
     <LinearLayout
+        android:layout_margin="16dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+
 
         <ImageView
+            android:id="@+id/image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/image"/>
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp" />
 
         <TextView
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/title"/>
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="teste" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="Tipo" />
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="end"
+                android:text="tipo value" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:text="Preço"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5" />
+
+            <TextView
+                android:text="preco value"
+                android:id="@+id/price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+            <TextView
+                android:text="Condomínio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5" />
+            <TextView
+                android:gravity="end"
+                android:text="condominio value"
+                android:layout_weight="5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/additional"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+            <TextView
+                android:text="Tipo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5" />
+
+            <TextView
+                android:text="tipo value"
+                android:layout_weight="5"
+                android:gravity="end"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/typeImo"/>
+
+        </LinearLayout>
+
+
         <TextView
+            android:layout_marginTop="16dp"
+            android:text="Informações"
+            android:textStyle="bold"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/type"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/price"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/additional"/>
+            android:layout_height="wrap_content" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/info"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/typeImo"/>
 
         <Button
+            android:backgroundTint="@color/colorAccent"
+            android:text="Demonstrar Interesse"
+            android:layout_gravity="bottom"
+            android:id="@+id/btn_interest"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_interest"/>
-
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
+</ScrollView>
