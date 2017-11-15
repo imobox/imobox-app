@@ -1,7 +1,10 @@
 package br.imobox.com.imobox;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +15,7 @@ import android.widget.TextView;
 import java.io.IOException;
 
 import br.imobox.com.imobox.helper.DownloadImageTask;
+import br.imobox.com.imobox.model.Message;
 import br.imobox.com.imobox.utils.Constants;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -64,11 +68,41 @@ public class InfoPropertieActivity extends AppCompatActivity {
         btn_interest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                displayDialog();
                 sendNotification();
             }
         });
 
         new DownloadImageTask(image).execute(link);
+    }
+
+
+    private void displayDialog(){
+        AlertDialog.Builder alert = new AlertDialog.Builder(InfoPropertieActivity.this);
+        alert.setTitle("Encontramos um match!");
+        alert.setMessage("Deseja iniciar uma conversa?");
+        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(final DialogInterface dialog, int which) {
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        startActivity(new Intent(InfoPropertieActivity.this, ChatActivity.class));
+                        dialog.dismiss();
+                    }
+                }, 3200);
+            }
+        });
+
+        alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        alert.show();
     }
 
     private void sendNotification() {
