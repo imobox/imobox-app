@@ -8,4 +8,41 @@
     <string name="known">Known</string>
 
     <string name="title_propertie"></string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <string name="why_do_you_want_to_rent_buy_moment_of_life">Why do you want to rent / buy? - Moment of life</string>
+    <string-array name="array_why_do_you_want_to_rent_buy_moment_of_life">
+        <item>Vou me casar</item>
+        <item>Vou morar sozinho</item>
+        <item>Filhos se mudando, preciso de um local menor</item>
+        <item>Família crescendo</item>
+        <item>Quero morar com amigos</item>
+        <item>Preciso morar perto do trabalho</item>
+        <item>Quero abrir um negócio</item>
+        <item>Outro</item>
+    </string-array>
+    <string name="what_minimum_and_maximum_amount_do_you_want_to_spend">What minimum and maximum amount do you want to spend?</string>
+    <string name="rent">Rent</string>
+    <string name="purchase">purchase</string>
+    <string name="what_do_you_prefer">What do you prefer?</string>
+    <string name="what_are_you_looking_for">What are you looking for?</string>
+    <string-array name="array_what_are_you_looking_for">
+        <item>Residencial</item>
+        <item>Apartamento</item>
+        <item>Casa</item>
+        <item>Chácara</item>
+        <item>Casa de condomínio</item>
+        <item>Flat</item>
+        <item>Sobrado</item>
+        <item>Cobertura</item>
+        <item>Kitnet</item>
+        <item>Comercial</item>
+        <item>Consultório</item>
+        <item>Edifício residencial</item>
+        <item>Sala comercial</item>
+        <item>Loja</item>
+        <item>Galpão</item>
+    </string-array>
+
 </resources>
