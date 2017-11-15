@@ -13,12 +13,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 import br.imobox.com.imobox.InfoPropertieActivity;
 import br.imobox.com.imobox.R;
 import br.imobox.com.imobox.helper.DownloadImageTask;
 import br.imobox.com.imobox.model.Propertie;
+import br.imobox.com.imobox.utils.Constants;
 
 /**
  * Created by matheuscatossi on 15/11/17.
@@ -69,6 +72,19 @@ public class KnownPropertiesCustomAdapter extends RecyclerView.Adapter<KnownProp
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                 builder.setTitle(propertie.getName());
                 View viewInflated = LayoutInflater.from(mContext).inflate(R.layout.modal_info_propertie, (ViewGroup) view.getRootView(), false);
+
+                final TextView price = (TextView) viewInflated.findViewById(R.id.price);
+                final TextView additional = (TextView) viewInflated.findViewById(R.id.additional);
+                final TextView typeImo = (TextView) viewInflated.findViewById(R.id.typeImo);
+                final TextView info = (TextView) viewInflated.findViewById(R.id.info);
+                final ImageView image = (ImageView) viewInflated.findViewById(R.id.image);
+
+                info.setText(Constants.info[propertie.getId()]);
+                typeImo.setText(Constants.typeImo[propertie.getId()]);
+                additional.setText(Constants.additional[propertie.getId()]);
+                price.setText(Constants.price[propertie.getId()]);
+
+                new DownloadImageTask(image).execute(propertie.getImage());
 
                 builder.setView(viewInflated);
 

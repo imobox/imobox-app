@@ -25,7 +25,6 @@
             android:layout_height="wrap_content"
             android:text="Você possui carro?"/>
 
-        
         <Spinner
             android:id="@+id/preferencia"
             android:layout_width="match_parent"
