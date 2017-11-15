@@ -12,6 +12,7 @@
         android:layout_marginBottom="4dp"
         android:layout_gravity="end"
         android:padding="8dp"
+        android:textColor="#fff"
         android:text="Olá"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
