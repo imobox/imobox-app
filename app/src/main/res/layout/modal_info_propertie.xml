@@ -6,15 +6,12 @@
     android:padding="20dp">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:fillViewport="true"
         android:scrollbars = "vertical"
         android:scrollbarStyle="insideInset">
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:stretchColumns="1">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,23 +25,75 @@
                 android:id="@+id/image"
                 />
 
-            <TextView
+            <LinearLayout
+                android:layout_marginTop="16dp"
+                android:weightSum="10"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/price"
-                android:text="price"/>
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Preço:"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:gravity="end"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/price"
+                    android:text="price"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:weightSum="10"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Condomínio:"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:gravity="end"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/additional"
+                    android:text="additional"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:weightSum="10"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Tipo:"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="5"
+                    android:gravity="end"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/typeImo"
+                    android:text="typeImo"/>
+
+            </LinearLayout>
 
             <TextView
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/additional"
-                android:text="additional"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/typeImo"
-                android:text="typeImo"/>
+                android:text="Infomarmações Gerais"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -52,9 +101,6 @@
                 android:id="@+id/info"
                 android:text="info"/>
 
-
         </LinearLayout>
-
-        </TableLayout>
     </ScrollView>
 </FrameLayout>
