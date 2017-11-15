@@ -30,9 +30,9 @@ public class ListPurchasePropertiesActivity extends AppCompatActivity {
         propertiesList = new ArrayList<>();
 
         propertiesList.add(new Propertie(0, Constants.title[0],  Constants.link[0], Constants.price[0]));
-        propertiesList.add(new Propertie(1, Constants.title[1],  Constants.link[1], Constants.price[0]));
-        propertiesList.add(new Propertie(2 ,Constants.title[2],  Constants.link[2], Constants.price[0]));
-        propertiesList.add(new Propertie(3, Constants.title[3],  Constants.link[3], Constants.price[0]));
+        propertiesList.add(new Propertie(1, Constants.title[1],  Constants.link[1], Constants.price[1]));
+        propertiesList.add(new Propertie(2 ,Constants.title[2],  Constants.link[2], Constants.price[2]));
+        propertiesList.add(new Propertie(3, Constants.title[3],  Constants.link[3], Constants.price[3]));
 
         propertiesCustomAdapter = new PropertiesCustomAdapter(getBaseContext(), propertiesList);
 
