@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "140352675172",
+    "firebase_url": "https://imobox-app.firebaseio.com",
+    "project_id": "imobox-app",
+    "storage_bucket": "imobox-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140352675172:android:36cfba16a2be30a8",
+        "android_client_info": {
+          "package_name": "br.imobox.com.imobox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140352675172-fjcbch666m13v87bcfe5v695smns7afg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.imobox.com.imobox",
+            "certificate_hash": "46f0590993e1c385da5e6d02e488e70af2410fb7"
+          }
+        },
+        {
+          "client_id": "140352675172-uvuda7e676frejdkp0d487h6kb7d6o8t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvq7cnMM24DF8mBu-c_HW5HwYVgti3AhI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140352675172-uvuda7e676frejdkp0d487h6kb7d6o8t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
