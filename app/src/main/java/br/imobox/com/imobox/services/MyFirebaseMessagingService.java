@@ -10,6 +10,7 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import br.imobox.com.imobox.ChatActivity;
 import br.imobox.com.imobox.MainActivity;
 import br.imobox.com.imobox.R;
 
@@ -32,27 +33,39 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
+
+            Intent intent = new Intent(this, ChatActivity.class);
+
+            PendingIntent pi = PendingIntent.getActivity(this,0,intent, PendingIntent.FLAG_ONE_SHOT);
+            intent.setAction(Long.toString(System.currentTimeMillis()));
+
             NotificationCompat.Builder mBuilder =   new NotificationCompat.Builder(this)
                     .setSmallIcon(R.drawable.ic_launcher_background) // notification icon
-                    .setContentTitle("Notification!") // title for notification
-                    .setContentText(remoteMessage.getNotification().getBody()) // message for notification
-                    .setAutoCancel(true); // clear notification after click
-//            Intent intent = new Intent(this, MainActivity.class);
-//            PendingIntent pi = PendingIntent.getActivity(this,0,intent,Intent.FLAG_ACTIVITY_NEW_TASK);
-//            mBuilder.setContentIntent(pi);
+                    .setContentTitle("Corretor x!") // title for notification
+                    .setContentText("Iniciar conversa?") // message for notification
+                    .addAction(R.drawable.ic_launcher_background, "sim", pi)
+                    .addAction(R.drawable.com_facebook_tooltip_black_xout, "Não", null);
+                    //.setAutoCancel(true); // clear notification after click remoteMessage.getData().values().toArray()[0]
+            mBuilder.setContentIntent(pi);
+
             NotificationManager mNotificationManager =
                     (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             mNotificationManager.notify(0, mBuilder.build());
         } else if (remoteMessage.getData() != null) {
-            Log.d(TAG, "Message Notification Body: " + remoteMessage.getData().values().toArray()[0]);
+            Intent intent = new Intent(this, ChatActivity.class);
+
+            PendingIntent pi = PendingIntent.getActivity(this,0,intent, PendingIntent.FLAG_ONE_SHOT);
+            intent.setAction(Long.toString(System.currentTimeMillis()));
+
             NotificationCompat.Builder mBuilder =   new NotificationCompat.Builder(this)
                     .setSmallIcon(R.drawable.ic_launcher_background) // notification icon
-                    .setContentTitle("Notification!") // title for notification
-                    .setContentText((CharSequence) remoteMessage.getData().values().toArray()[0]) // message for notification
-                    .setAutoCancel(true); // clear notification after click
-//            Intent intent = new Intent(this, MainActivity.class);
-//            PendingIntent pi = PendingIntent.getActivity(this,0,intent,Intent.FLAG_ACTIVITY_NEW_TASK);
-//            mBuilder.setContentIntent(pi);
+                    .setContentTitle("Corretor x!") // title for notification
+                    .setContentText("Iniciar conversa?") // message for notification
+                    .addAction(R.drawable.ic_launcher_background, "sim", pi)
+                    .addAction(R.drawable.com_facebook_tooltip_black_xout, "Não", null);
+            //.setAutoCancel(true); // clear notification after click remoteMessage.getData().values().toArray()[0]
+            mBuilder.setContentIntent(pi);
+
             NotificationManager mNotificationManager =
                     (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             mNotificationManager.notify(0, mBuilder.build());
