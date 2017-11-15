@@ -43,6 +43,19 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             NotificationManager mNotificationManager =
                     (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             mNotificationManager.notify(0, mBuilder.build());
+        } else if (remoteMessage.getData() != null) {
+            Log.d(TAG, "Message Notification Body: " + remoteMessage.getData().values().toArray()[0]);
+            NotificationCompat.Builder mBuilder =   new NotificationCompat.Builder(this)
+                    .setSmallIcon(R.drawable.ic_launcher_background) // notification icon
+                    .setContentTitle("Notification!") // title for notification
+                    .setContentText((CharSequence) remoteMessage.getData().values().toArray()[0]) // message for notification
+                    .setAutoCancel(true); // clear notification after click
+//            Intent intent = new Intent(this, MainActivity.class);
+//            PendingIntent pi = PendingIntent.getActivity(this,0,intent,Intent.FLAG_ACTIVITY_NEW_TASK);
+//            mBuilder.setContentIntent(pi);
+            NotificationManager mNotificationManager =
+                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            mNotificationManager.notify(0, mBuilder.build());
         }
 
         // Also if you intend on generating your own notifications as a result of a received FCM
