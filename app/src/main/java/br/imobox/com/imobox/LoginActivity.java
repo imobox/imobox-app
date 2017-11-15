@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                             client.setEmail(object.get("email").toString());
                             client.setSex(object.get("gender").toString());
                             client.setPerfil(object.get("name").toString());
-                            Intent intent = new Intent(LoginActivity.this, RegisterClientActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             intent.putExtra("client", client);
                             startActivity(intent);
                         } catch (JSONException e) {

@@ -1,9 +1,11 @@
 package br.imobox.com.imobox.services;
 
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -20,6 +22,7 @@ import br.imobox.com.imobox.R;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private static final String TAG = "FCM Service";
+    String CHANNEL_ID = "my_channel_01";
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -28,6 +31,24 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // TODO(developer): Handle FCM messages here.
         // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
         Log.d(TAG, "From: " + remoteMessage.getFrom());
+
+        NotificationManager mNotificationManager;
+
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            int notifyID = 1;
+            String CHANNEL_ID = "my_channel_01";// The id of the channel.
+            CharSequence name = CHANNEL_ID;// The user-visible name of the channel.
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, name, importance);
+            mNotificationManager.createNotificationChannel(mChannel);
+        } else {
+
+            mNotificationManager =
+                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        }
 
 
         // Check if message contains a notification payload.
@@ -44,12 +65,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     .setContentTitle("Match com um novo cliente!") // title for notification
                     .setContentText("Está interessado?") // message for notification
                     .addAction(R.drawable.ic_launcher_background, "sim", pi)
-                    .addAction(R.drawable.com_facebook_tooltip_black_xout, "Não", null);
+                    .addAction(R.drawable.com_facebook_tooltip_black_xout, "Não", null)
+                    .setChannelId(CHANNEL_ID);
                     //.setAutoCancel(true); // clear notification after click remoteMessage.getData().values().toArray()[0]
             mBuilder.setContentIntent(pi);
 
-            NotificationManager mNotificationManager =
-                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
             mNotificationManager.notify(0, mBuilder.build());
         } else if (remoteMessage.getData() != null) {
             Intent intent = new Intent(this, ChatActivity.class);
@@ -62,12 +83,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     .setContentTitle("Match com um novo cliente!") // title for notification
                     .setContentText("Está interessado?") // message for notification
                     .addAction(R.drawable.ic_launcher_background, "sim", pi)
-                    .addAction(R.drawable.com_facebook_tooltip_black_xout, "Não", null);
+                    .addAction(R.drawable.com_facebook_tooltip_black_xout, "Não", null)
+                    .setChannelId(CHANNEL_ID);
             //.setAutoCancel(true); // clear notification after click remoteMessage.getData().values().toArray()[0]
             mBuilder.setContentIntent(pi);
 
-            NotificationManager mNotificationManager =
-                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             mNotificationManager.notify(0, mBuilder.build());
         }
 
