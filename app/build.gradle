@@ -35,6 +35,10 @@ dependencies {
 
     compile 'com.android.support:recyclerview-v7:26.0.0'
     compile 'com.android.support:cardview-v7:26.0.0'
+
+    compile 'com.android.support:design:26.0.0'
+
+    compile 'com.github.warkiz.widget:indicatorseekbar:1.1.2'
 }
 
 

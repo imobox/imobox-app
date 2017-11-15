@@ -2,10 +2,12 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
-    android:scrollbars = "vertical"
+    android:scrollbars="vertical"
     android:scrollbarStyle="insideInset">
     <TableLayout
+        android:layout_margin="16dp"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:stretchColumns="1">
@@ -16,22 +18,36 @@
             android:gravity="center"
             android:foregroundGravity="center">
 
-            <EditText
+            <android.support.design.widget.TextInputLayout
+                android:hint="Nome"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_email"
-                android:hint="email"/>
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_perfil"/>
 
-            <EditText
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:hint="Email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_perfil"
-                android:hint="perfil"/>
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_email" />
+            </android.support.design.widget.TextInputLayout>
 
+            <TextView
+                android:layout_marginTop="16dp"
+                android:text="Sexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
                 <RadioButton android:id="@+id/male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -42,37 +58,58 @@
                     android:text="@string/female"/>
             </RadioGroup>
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_about"
-                android:hint="about"/>
+            <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:hint="Sobre"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+                <!--<EditText-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/et_about"/>-->
+            <!--</android.support.design.widget.TextInputLayout>-->
 
-            <EditText
+            <android.support.design.widget.TextInputLayout
+                android:hint="Nascimento"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_birthday"
-                android:hint="birthday"/>
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_birthday" />
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
+            <android.support.design.widget.TextInputLayout
+                android:hint="Educação"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/et_school_records"
-                android:hint="school records"/>
+                android:id="@+id/et_school_records"/>
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
+            <android.support.design.widget.TextInputLayout
+                android:hint="Trabalho"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/et_work_records"
-                android:hint="work records"/>
+                android:id="@+id/et_work_records" />
+            </android.support.design.widget.TextInputLayout>
 
+            <android.support.design.widget.TextInputLayout
+                android:hint="Local"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/et_location"
-                android:hint="location"/>
+                android:id="@+id/et_location" />
+            </android.support.design.widget.TextInputLayout>
 
             <View
+                android:layout_margin="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:background="@color/colorPrimary"/>
@@ -85,7 +122,7 @@
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
                 <RadioButton android:id="@+id/purchase"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -96,6 +133,12 @@
                     android:text="@string/rent"/>
             </RadioGroup>
 
+            <TextView
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo de Imóvel Preferido"/>
+
             <Spinner
             android:id="@+id/sppiner_what_are_you_looking_for"
             android:layout_width="match_parent"
@@ -104,19 +147,27 @@
             android:prompt="@string/what_are_you_looking_for" />
 
             <TextView
+                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/what_minimum_and_maximum_amount_do_you_want_to_spend"/>
+                android:text="Qual o mínimo e máximo que deseja investir?"/>
 
-            <SeekBar
-                android:id="@+id/progressbar"
-                android:layout_width="fill_parent"
+            <com.warkiz.widget.IndicatorSeekBar
+                app:isb_seek_bar_type="continuous_texts_ends"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:max="40000"
-                android:progress="0"
-                android:progressDrawable="@drawable/progressbar"
-                android:secondaryProgress="0" />
+                android:layout_marginTop="16dp"
+                app:isb_max="8000.0"
+                app:isb_min="1000.0"
+                app:isb_progress="5000.0"
+                app:isb_progress_value_float="true"
+                app:isb_show_indicator="true"/>
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Motivo"/>
 
             <Spinner
                 android:id="@+id/sppiner_why_do_you_want_to_rent_buy_moment_of_life"
@@ -126,11 +177,12 @@
                 android:prompt="@string/why_do_you_want_to_rent_buy_moment_of_life" />
 
             <Button
+                android:backgroundTint="@color/colorAccent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/add"
+                android:text="Continuar"
                 android:id="@+id/btn_add" />
         </LinearLayout>
     </TableLayout>
