@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.imobox.com.imobox.MainActivity">
+    tools:context="br.imobox.com.imobox.RegisterRealtorActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,23 +19,8 @@
             android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/client"
-            android:id="@+id/btn_client" />
-
-        <Button
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/realtor"
-            android:id="@+id/btn_realtor" />
-
-        <Button
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/owner"
-            android:id="@+id/btn_owner" />
+            android:text="@string/add"
+            android:id="@+id/btn_add" />
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
