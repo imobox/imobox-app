@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="br.imobox.com.imobox.MainActivity">
 
     <LinearLayout
@@ -15,29 +16,34 @@
         >
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logo_imobox" />
+            android:layout_gravity="center_horizontal"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/logo_imobox_white" />
 
         <Button
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:background="@color/default_screen_bg"
+            android:textColor="@color/colorPrimary"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/client"
             android:id="@+id/btn_client" />
 
         <Button
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:background="@color/default_screen_bg"
+            android:textColor="@color/colorPrimary"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/realtor"
             android:id="@+id/btn_realtor" />
 
         <Button
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:background="@color/default_screen_bg"
+            android:textColor="@color/colorPrimary"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/owner"

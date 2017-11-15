@@ -50,7 +50,17 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".SendNotificationActivity">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -59,29 +69,33 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".LoginActivity">
-
-        </activity>
-        <activity android:name=".SendNotificationActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
         <activity android:name=".RegisterClientActivity" />
-        <activity android:name=".RegisterRealtorActivity" >
+        <activity android:name=".RegisterRealtorActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".ListPurchasePropertiesActivity" />
+        <activity android:name=".InfoPropertieActivity" />
+        <activity android:name=".ListKnownPropertiesActivity" />
+        <activity android:name=".ChatActivity"></activity>
+        <activity
+            android:name=".IntroActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".ListPurchasePropertiesActivity" />
-        <activity android:name=".InfoPropertieActivity" />
-        <activity android:name=".ListKnownPropertiesActivity" />
-        <activity android:name=".ChatActivity">
-
         </activity>
     </application>
 
