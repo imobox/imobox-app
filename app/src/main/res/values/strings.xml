@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">imobox</string>
+
+    <string name="client">Cliente</string>
+    <string name="realtor">Realtor</string>
+    <string name="owner">owner</string>
 </resources>
