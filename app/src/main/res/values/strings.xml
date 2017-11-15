@@ -3,10 +3,10 @@
     <string name="facebook_app_id">129310704392597</string>
     <string name="fb_login_protocol_scheme">fb129310704392597</string>
     <string name="client">Cliente</string>
-    <string name="realtor">Realtor</string>
-    <string name="owner">owner</string>
-    <string name="add">Create/Next</string>
-    <string name="known">Known</string>
+    <string name="realtor">Corretor</string>
+    <string name="owner">Proprietário</string>
+    <string name="add">Criar/Prosseguir</string>
+    <string name="known">Conhecimento</string>
 
     <string name="title_propertie"></string>
     <string name="male">Male</string>
@@ -25,9 +25,9 @@
         <item>Outro</item>
     </string-array>
     <string name="what_minimum_and_maximum_amount_do_you_want_to_spend">What minimum and maximum amount do you want to spend?</string>
-    <string name="rent">Rent</string>
-    <string name="purchase">purchase</string>
-    <string name="what_do_you_prefer">What do you prefer?</string>
+    <string name="rent">Alugar</string>
+    <string name="purchase">Comprar</string>
+    <string name="what_do_you_prefer">O que você prefere?</string>
     <string name="what_are_you_looking_for">What are you looking for?</string>
     <string-array name="array_what_are_you_looking_for">
         <item>Residencial</item>
@@ -90,4 +90,12 @@
         <item>Loja</item>
         <item>Galpão</item>
     </string-array>
+
+    <string name="intro_1_title">Cliente</string>
+    <string name="intro_2_title">Corretor</string>
+    <string name="intro_3_title">Proprietário</string>
+
+    <string name="intro_1_desc">Encontre imóveis que realmente combinam com você!</string>
+    <string name="intro_2_desc">Tenha um vasto catálogo de imóveis disponíveis</string>
+    <string name="intro_3_desc">Cadastre seus imóveis e tenha os melhores corretores para lhe auxiliar na venda ou locação</string>
 </resources>

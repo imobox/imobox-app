@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#7120a7</color>
+    <color name="colorPrimaryClean">#8d3fc1</color>
+    <color name="colorPrimaryDark">#4D1572</color>
+    <color name="colorAccent">#6D6466</color>
 
     <color name="default_screen_bg">#f9f9f9</color>
     <color name="rounded_container_bg">#222222</color>
