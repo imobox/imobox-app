@@ -15,7 +15,8 @@ public class InfoPropertieActivity extends AppCompatActivity {
 
     private TextView tv_title, tv_type, tv_price, tv_additional, tv_typeImo, tv_info;
     private ImageView image;
-    private Button btn_interest
+    private Button btn_interest;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

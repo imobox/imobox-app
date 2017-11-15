@@ -101,7 +101,7 @@ public class KnownPropertiesCustomAdapter extends RecyclerView.Adapter<KnownProp
             }
         });
 
-        new DownloadImageTask(holder.image).execute("http://www.imovelweb.com.br/noticias/wp-content/uploads/2017/10/corretagem.jpg");
+        new DownloadImageTask(holder.image).execute(propertie.getImage());
     }
 
     @Override
