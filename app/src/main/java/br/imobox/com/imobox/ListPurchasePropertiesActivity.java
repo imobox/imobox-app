@@ -10,6 +10,7 @@ import java.util.Properties;
 
 import br.imobox.com.imobox.adapter.PropertiesCustomAdapter;
 import br.imobox.com.imobox.model.Propertie;
+import br.imobox.com.imobox.utils.Constants;
 
 public class ListPurchasePropertiesActivity extends AppCompatActivity {
     private PropertiesCustomAdapter propertiesCustomAdapter;
@@ -28,10 +29,10 @@ public class ListPurchasePropertiesActivity extends AppCompatActivity {
 
         propertiesList = new ArrayList<>();
 
-        propertiesList.add(new Propertie(1, "x", "y", 00.00));
-        propertiesList.add(new Propertie(2, "x", "y", 00.00));
-        propertiesList.add(new Propertie(3 ,"x", "y", 00.00));
-        propertiesList.add(new Propertie(4, "x", "y", 00.00));
+        propertiesList.add(new Propertie(1, Constants.title[0],  Constants.link[0], Constants.price[0]));
+        propertiesList.add(new Propertie(2, Constants.title[1],  Constants.link[1], Constants.price[0]));
+        propertiesList.add(new Propertie(3 ,Constants.title[2],  Constants.link[2], Constants.price[0]));
+        propertiesList.add(new Propertie(4, Constants.title[3],  Constants.link[3], Constants.price[0]));
 
         propertiesCustomAdapter = new PropertiesCustomAdapter(getBaseContext(), propertiesList);
 
