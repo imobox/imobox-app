@@ -41,8 +41,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
             NotificationCompat.Builder mBuilder =   new NotificationCompat.Builder(this)
                     .setSmallIcon(R.drawable.ic_launcher_background) // notification icon
-                    .setContentTitle("Corretor x!") // title for notification
-                    .setContentText("Iniciar conversa?") // message for notification
+                    .setContentTitle("Match com um novo cliente!") // title for notification
+                    .setContentText("Está interessado?") // message for notification
                     .addAction(R.drawable.ic_launcher_background, "sim", pi)
                     .addAction(R.drawable.com_facebook_tooltip_black_xout, "Não", null);
                     //.setAutoCancel(true); // clear notification after click remoteMessage.getData().values().toArray()[0]
@@ -59,8 +59,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
             NotificationCompat.Builder mBuilder =   new NotificationCompat.Builder(this)
                     .setSmallIcon(R.drawable.ic_launcher_background) // notification icon
-                    .setContentTitle("Corretor x!") // title for notification
-                    .setContentText("Iniciar conversa?") // message for notification
+                    .setContentTitle("Match com um novo cliente!") // title for notification
+                    .setContentText("Está interessado?") // message for notification
                     .addAction(R.drawable.ic_launcher_background, "sim", pi)
                     .addAction(R.drawable.com_facebook_tooltip_black_xout, "Não", null);
             //.setAutoCancel(true); // clear notification after click remoteMessage.getData().values().toArray()[0]
