@@ -14,6 +14,46 @@
         android:foregroundGravity="center"
         >
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="creci"
+            android:id="@+id/creci"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Você possui carro?"/>
+
+        
+        <Spinner
+            android:id="@+id/preferencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/array_preferencia"
+            android:prompt="@string/preferencia" />
+
+        <Spinner
+            android:id="@+id/disponibilidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/array_disponibilidade"
+            android:prompt="@string/disponibilidade" />
+
+        <Spinner
+            android:id="@+id/regioes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/array_regioes"
+            android:prompt="@string/regioes" />
+
+        <Spinner
+            android:id="@+id/tipo_imovel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/array_tipo_imovel"
+            android:prompt="@string/tipo_imovel" />
+
         <Button
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
